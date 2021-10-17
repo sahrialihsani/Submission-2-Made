@@ -1,0 +1,61 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+apply from: '../shared_dependencies.gradle'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+    //Build Kotlin
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_ver"
+    //Retrofit Ver
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_ver"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_ver"
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_ver"
+    //Courotines Ver
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_ver"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_ver"
+    //Sqlite Ver
+    implementation "net.zetetic:android-database-sqlcipher:4.4.0"
+    implementation "androidx.sqlite:sqlite-ktx:2.1.0"
+    //Room Ver
+    implementation "androidx.room:room-runtime:$room_ver"
+    kapt "androidx.room:room-compiler:$room_ver"
+    androidTestImplementation "androidx.room:room-testing:$room_ver"
+    implementation "androidx.room:room-ktx:$room_ver"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_ver"
+}

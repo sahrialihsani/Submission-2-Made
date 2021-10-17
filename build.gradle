@@ -1,0 +1,56 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    //App Dependency Version
+    ext.kotlin_ver = '1.4.32'
+    ext.appcompat_ver = "1.1.0"
+    ext.core_ktx_ver = "1.3.2"
+    ext.constraint_ver = "2.0.4"
+    //Testing Dependency Version
+    ext.legacy_support_ver = "1.0.0"
+    ext.junit_ver = "4.13.1"
+    ext.androidx_junit_ver= "1.1.2"
+    ext.espresso_ver = "3.3.0"
+    ext.multidex_ver = "2.0.1"
+
+    //Dependency for UI
+    //Rv
+    ext.recyclerview_ver = "1.1.0"
+    //Cv
+    ext.cardview_ver = "1.0.0"
+    //Material
+    ext.material_ver = "1.2.1"
+    //Glide
+    ext.glide_ver = "4.11.0"
+    //Dependency Injection Version (koin)
+    ext.koin_ver = "2.1.6"
+    //Retrofit Version
+    ext.retrofit_ver = "2.9.0"
+    ext.logging_interceptor_ver = '5.0.0-alpha.2'
+    //Room Version
+    ext.room_ver = "2.3.0"
+    //Courotines Flow Version
+    ext.kotlin_coroutines_ver = "1.4.3"
+    ext.lifecycle_ver = "2.3.1"
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.1.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_ver"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
