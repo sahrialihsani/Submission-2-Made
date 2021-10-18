@@ -42,7 +42,7 @@ class DetailActivity : AppCompatActivity() {
                 binding.tvDetailDate.text = it
             }
             (movieModel.voteAverage).also {
-                binding.tvRate.text = it
+                binding.tvDetailRate.text = it
             }
             binding.tvOverview.text = movieModel.overview
             Glide.with(this)
@@ -51,7 +51,7 @@ class DetailActivity : AppCompatActivity() {
                     RequestOptions.placeholderOf(R.drawable.ic_loading)
                         .error(R.drawable.ic_error)
                 )
-                .into(binding.ivDetailPoster)
+                .into(binding.ivPosterImage)
             Glide.with(this)
                 .load(movieModel.backdrop)
                 .apply(
@@ -97,7 +97,7 @@ class DetailActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_favorite -> {
-                val uri = Uri.parse("submission_1_made://favorite")
+                val uri = Uri.parse("submission_2_made://favorite")
                 startActivity(Intent(Intent.ACTION_VIEW, uri))
             }
         }
