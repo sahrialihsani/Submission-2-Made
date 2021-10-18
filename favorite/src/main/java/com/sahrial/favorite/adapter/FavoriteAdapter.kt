@@ -45,7 +45,7 @@ class FavoriteAdapter : RecyclerView.Adapter<FavoriteAdapter.ListViewHolder>() {
                         RequestOptions.placeholderOf(R.drawable.ic_loading)
                             .error(R.drawable.ic_error)
                     )
-                    .into(ivPoster)
+                    .into(ivFavPoster)
                 tvTitle.text = data.title
                 tvOverview.text = data.overview
             }

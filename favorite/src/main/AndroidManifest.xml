@@ -17,7 +17,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:scheme="submission_1_made"
+                <data android:scheme="submission_2_made"
                     android:host="favorite"/>
             </intent-filter>
         </activity>

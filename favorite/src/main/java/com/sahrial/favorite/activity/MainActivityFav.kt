@@ -36,7 +36,7 @@ class MainActivityFav : AppCompatActivity() {
             favoriteMovieAdapter.setData(dataMovie)
         })
 
-        with(binding.rvMovie) {
+        with(binding.rvFav) {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
             adapter = favoriteMovieAdapter

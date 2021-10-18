@@ -45,7 +45,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ListViewHolder>() {
                         RequestOptions.placeholderOf(R.drawable.ic_loading)
                             .error(R.drawable.ic_error)
                     )
-                    .into(ivPoster)
+                    .into(ivFavPoster)
             }
         }
 
